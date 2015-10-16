@@ -1,0 +1,18 @@
+<h1>hello world</h1>
+
+<form id="new-todo">
+	<label for="body">New Todo</label><br>
+	<input type="text" name="body" />
+	<button type="submit">Save</button>
+</form>
+
+<ul id="todo-list">
+  {{#each todos}}
+    <li>
+    	<a href="/todos/{{this._id}}">
+    		{{this.body}}
+    	</a>
+			<div class="remove-todo" data-id="{{this._id}}">Remove</div>
+    </li>
+  {{/each}}
+</ul>
