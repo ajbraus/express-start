@@ -1,3 +1,6 @@
 body {
-	background: lightblue;
+	background: #FDFDFD;
+}
+.remove-todo {
+	cursor: pointer;
 }

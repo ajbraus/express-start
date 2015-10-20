@@ -1,18 +1,23 @@
-<h1>hello world</h1>
+<div class="col-sm-6 col-sm-offset-3">
+  <form id="new-todo">
+    <div class="form-group">
+      <label for="body">New Todo</label><br>
+      <input type="text" name="body" class='form-control' />    
+    </div>
+    <div class="text-right">
+      <button type="submit" class='btn btn-primary btn-sm'>Save</button>  
+    </div>  
+  </form>
+  <hr>
 
-<form id="new-todo">
-	<label for="body">New Todo</label><br>
-	<input type="text" name="body" />
-	<button type="submit">Save</button>
-</form>
-
-<ul id="todo-list">
-  {{#each todos}}
-    <li>
-    	<a href="/todos/{{this._id}}">
-    		{{this.body}}
-    	</a>
-			<div class="remove-todo" data-id="{{this._id}}">Remove</div>
-    </li>
-  {{/each}}
-</ul>
+  <ul id="todo-list" class='list-group'>
+    {{#each todos}}
+      <li class='list-group-item'>
+        <a href="/todos/{{this._id}}">
+          {{this.body}}
+        </a>
+        <div class="remove-todo pull-right" data-id="{{this._id}}"><i class="icon ion-ios-trash-outline"></i></div>
+      </li>
+    {{/each}}
+  </ul>  
+</div>

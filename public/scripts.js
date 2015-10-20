@@ -9,12 +9,16 @@ $(document).ready(function() {
 
   	$.post('/todos', todo, function (data) {
   		console.log(data)
-  		$('#todo-list').append("<li>" + data.body + "</li>");
+  		$('#todo-list').append(
+  							"<li class='list-group-item'>" + 
+  								"<a href='/todos/" + data._id + "'>" + data.body + "</a>" +
+	  							"<div class='remove-todo pull-right' data-id='" + data._id + "'><i class='icon ion-ios-trash-outline'></i></div>" +
+  							"</li>");
   		$('#new-todo')[0].reset();
   	})
   });
 
-  $('.remove-todo').click(function (e) {
+  $('#todo-list').on("click", ".remove-todo", function (e) {
   	e.preventDefault();
 
   	var todo = $(this)
